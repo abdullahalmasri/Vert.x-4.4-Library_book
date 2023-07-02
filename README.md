@@ -6,10 +6,6 @@ This application was generated using http://start.vertx.io
 
 == Building
 
-To launch your tests:
-```
-./mvnw clean test
-```
 
 To package your application:
 ```
@@ -29,4 +25,9 @@ To run your application:
 * https://discord.gg/6ry7aqPWXy[Vert.x Discord]
 * https://gitter.im/eclipse-vertx/vertx-users[Vert.x Gitter]
 
+
+Intellij IDE
+go to Edit configurations 
+select Application in the build and run past this ``io.vertx.core.Launcher`` and in program arguments ``run com.example.starter.MainVerticle``
+and enjoy
 
