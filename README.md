@@ -25,6 +25,10 @@ To run your application:
 * https://discord.gg/6ry7aqPWXy[Vert.x Discord]
 * https://gitter.im/eclipse-vertx/vertx-users[Vert.x Gitter]
 
+before run the application go to postgres and create database using this command
+``create Database nameOfDatabase``
+in resources application.properties change the database name as you create
+datasource.database=nameOfDatabase
 
 Intellij IDE
 go to Edit configurations 
