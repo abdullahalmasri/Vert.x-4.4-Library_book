@@ -1,16 +1,29 @@
 package com.example.starter.Utils;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-@AllArgsConstructor
 public class ApplicationUtils {
-  private Integer serverPort;
+    private Integer serverPort;
+
+    public ApplicationUtils(Integer serverPort) {
+        this.serverPort = serverPort;
+    }
+
+    public ApplicationUtils() {
+    }
 
 
-  public static int numberOfAvailableCores() {
-    // I divide this in half to save some resources while developing
-    return Runtime.getRuntime().availableProcessors() / 2;
-  }
+    public Integer getServerPort() {
+        return serverPort;
+    }
+
+    public void setServerPort(Integer serverPort) {
+        this.serverPort = serverPort;
+    }
+
+    public static int numberOfAvailableCores() {
+        // I divide this in half to save some resources while developing
+        return Runtime.getRuntime().availableProcessors() / 2;
+    }
 }

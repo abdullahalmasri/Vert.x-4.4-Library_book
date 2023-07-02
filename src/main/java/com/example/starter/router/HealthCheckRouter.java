@@ -8,34 +8,34 @@ import io.vertx.ext.healthchecks.HealthCheckHandler;
 
 public class HealthCheckRouter {
 
-  private HealthCheckRouter() {
+    private HealthCheckRouter() {
 
-  }
+    }
 
-  /**
-   * Set health check routes
-   *
-   * @param vertx    Vertx context
-   * @param router   Router
-   * @param dbClient PostgreSQL pool
-   */
-  public static void setRouter(Vertx vertx,
-                               Router router,
-                               PgPool dbClient) {
-    final HealthCheckHandler healthCheckHandler = HealthCheckHandler.create(vertx);
+    /**
+     * Set health check routes
+     *
+     * @param vertx    Vertx context
+     * @param router   Router
+     * @param dbClient PostgreSQL pool
+     */
+    public static void setRouter(Vertx vertx,
+                                 Router router,
+                                 PgPool dbClient) {
+        final HealthCheckHandler healthCheckHandler = HealthCheckHandler.create(vertx);
 
-    healthCheckHandler.register("database",
-      promise ->
-        dbClient.getConnection(connection -> {
-          if (connection.failed()) {
-            promise.fail(connection.cause());
-          } else {
-            connection.result().close();
-            promise.complete(Status.OK());
-          }
-        })
-    );
+        healthCheckHandler.register("database",
+                promise ->
+                        dbClient.getConnection(connection -> {
+                            if (connection.failed()) {
+                                promise.fail(connection.cause());
+                            } else {
+                                connection.result().close();
+                                promise.complete(Status.OK());
+                            }
+                        })
+        );
 
-    router.get("/health").handler(healthCheckHandler);
-  }
+        router.get("/health").handler(healthCheckHandler);
+    }
 }

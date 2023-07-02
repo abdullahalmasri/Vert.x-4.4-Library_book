@@ -10,14 +10,15 @@ import org.flywaydb.core.api.configuration.Configuration;
 
 public class MigrationVerticle extends AbstractVerticle {
 
-  private static final Logger LOGGER = LoggerFactory.getLogger(MigrationVerticle.class);
-  @Override
-  public void start(Promise<Void> promise) {
-    final Configuration config = PostSqlConn.buildMigrationsConfiguration();
-    final Flyway flyway = new Flyway(config);
-    LOGGER.info("Starting migration");
-    flyway.migrate();
+    private static final Logger LOGGER = LoggerFactory.getLogger(MigrationVerticle.class);
 
-    promise.complete();
-  }
+    @Override
+    public void start(Promise<Void> promise) {
+        final Configuration config = PostSqlConn.buildMigrationsConfiguration();
+        final Flyway flyway = new Flyway(config);
+        LOGGER.info("Starting migration");
+        flyway.migrate();
+
+        promise.complete();
+    }
 }
