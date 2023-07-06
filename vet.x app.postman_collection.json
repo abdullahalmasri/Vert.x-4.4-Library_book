@@ -1,0 +1,257 @@
+{
+	"info": {
+		"_postman_id": "66898e7a-9f2f-433c-9ee4-bd4251b7031c",
+		"name": "vet.x app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15049508"
+	},
+	"item": [
+		{
+			"name": "GetAllLibraries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8888/api/v1/libraries?page=1&limit=10",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"v1",
+						"libraries"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SaveLibrary",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"test Library\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8888/api/v1/saveLib",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"v1",
+						"saveLib"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update Library",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Tomorrow Library\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8888/api/v1/libraries/6df66e43-21f3-4d00-8474-ca7853679e41",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"v1",
+						"libraries",
+						"6df66e43-21f3-4d00-8474-ca7853679e41"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetLibraryByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8888/api/v1/libraries/616c8fec-97c2-4a4c-9d27-ef5c7f8293a1",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"v1",
+						"libraries",
+						"616c8fec-97c2-4a4c-9d27-ef5c7f8293a1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DelLibrary",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8888/api/v1/libraries/6df66e43-21f3-4d00-8474-ca7853679e41",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"v1",
+						"libraries",
+						"6df66e43-21f3-4d00-8474-ca7853679e41"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllBooks",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "saveBook",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"author\": \"José Saramago\",\n    \"country\": \"Portugal\",\n    \"image_link\": \"images/ensaio-sobre-a-cegueira.jpg\",\n    \"language\": \"Portuguese\",\n    \"link\": \"https://en.wikipedia.org/wiki/Blindness_(novel)\",\n    \"pages\": 288,\n    \"title\": \"Ensaio sobre a cegueira\",\n    \"year\": 1995,\n    \"library_id\": \"616c8fec-97c2-4a4c-9d27-ef5c7f8293a1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8888/api/v1/books",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"v1",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateBook",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8888/api/v1/books",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"v1",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBookById",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "updateLanguageBook",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"language\":\"English\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8888/api/v1/books/4715cc6c-3b2b-4d1b-972e-874c5abfa7b4",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"4715cc6c-3b2b-4d1b-972e-874c5abfa7b4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteBook",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8888/api/v1/books/4715cc6c-3b2b-4d1b-972e-874c5abfa7b4",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"4715cc6c-3b2b-4d1b-972e-874c5abfa7b4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
